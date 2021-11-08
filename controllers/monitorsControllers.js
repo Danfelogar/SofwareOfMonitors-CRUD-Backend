@@ -34,13 +34,13 @@ exports.getAllMonitors = async (req, res, next) => {
   try {
 
     const [rows] = await db_connection.execute("SELECT * FROM `monitors`");
-
-    if (rows.length === 0) {
-      return res.status(200).json({
-        message:
-          "There are no monitors in the database, please insert some monitors.",
-      });
-    }
+    //se comenta esta linea por si se quiere usar a futuro para bloquear la app cuando no tenga datos el array
+    // if (rows.length === 0) {
+    //   return res.status(200).json({
+    //     message:
+    //       "There are no monitors in the database, please insert some monitors.",
+    //   });
+    // }
 
     res.status(200).json(rows);
 

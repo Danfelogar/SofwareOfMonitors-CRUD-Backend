@@ -4,14 +4,14 @@ const { body, param, validationResult } = require("express-validator");
 module.exports = {
   // All fields Validation for Monitors
     monitorsInfo: [
-    body("names", "The names must be of minimum 5 characters length")
+    body("names", "The names must be of minimum 2 characters length")
         .exists()
         .isLength({ min: 2 })
         .trim()
         .unescape()
         .escape(),
 
-    body("lastsNames", "The lastNames must be of minimum 5 characters length")
+    body("lastsNames", "The lastNames must be of minimum 2 characters length")
         .exists()
         .isLength({ min: 2 })
         .trim()
@@ -80,9 +80,9 @@ module.exports = {
             .unescape()
             .escape(),
     
-        body("date", "The date must be of minimum 4 characters length")
+        body("date", "The date must be of minimum 6 characters length")
             .exists()
-            .isLength({ min: 4 })
+            .isLength({ min: 6 })
             .trim()
             .unescape()
             .custom(async (value) => {
@@ -95,7 +95,7 @@ module.exports = {
                     return Promise.reject("date already in use");
                 }
             }),
-    
+
         body("classroom", "The classroom must be of minimum 2 characters length and is alphanumeric, for example: 203b")
             .exists()
             .isLength({ min:2 })
