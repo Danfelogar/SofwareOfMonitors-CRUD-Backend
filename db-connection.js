@@ -1,5 +1,5 @@
 const mysql = require("mysql2");
-const { connect } = require("../softwareDeMonitorias-backend/config/connection");
+// const { connect } = require("../softwareDeMonitorias-backend/config/connection");
 
 const db_connection = mysql
     .createConnection({

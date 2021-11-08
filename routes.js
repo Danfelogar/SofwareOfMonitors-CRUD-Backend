@@ -5,7 +5,7 @@ const monitoringController = require('./controllers/monitoringControllers');
 
 // Inserting Monitors
 router.post(
-    '/insert-monitors',
+    '/monitors',
     validators.monitorsInfo,
     validators.result,
     monitorsController.insert
@@ -13,13 +13,13 @@ router.post(
 
 // Fetching all Monitors
 router.get(
-    '/get-all-monitors',
+    '/monitors',
     monitorsController.getAllMonitors
 );
 
 // Fetching Single Monitors By ID
 router.get(
-    '/get-monitor/:id',
+    '/monitors/:id',
     validators.id,
     validators.result,
     monitorsController.getMonitorByID
@@ -27,7 +27,7 @@ router.get(
 
 // Updating Monitors
 router.patch(
-    '/update-monitor/:id',
+    '/monitors/:id',
     [...validators.id, ...validators.monitorsInfo],
     validators.result,
     monitorsController.updateMonitor
@@ -35,7 +35,7 @@ router.patch(
 
 // Deleting Monitors
 router.delete(
-    '/delete-monitor/:id',
+    '/monitors/:id',
     validators.id,
     validators.result,
     monitorsController.deleteMonitor
@@ -45,7 +45,7 @@ router.delete(
 
 // Inserting Monitorings
 router.post(
-    '/insert-monitorings',
+    '/monitorings',
     validators.monitoringsInfo,
     validators.result,
     monitoringController.insert
@@ -53,13 +53,13 @@ router.post(
 
 // Fetching all Monitorings
 router.get(
-    '/get-all-monitorings',
+    '/monitorings',
     monitoringController.getAllMonitorings
 );
 
 // Fetching Single Monitorings By ID
 router.get(
-    '/get-monitoring/:id',
+    '/monitorings/:id',
     validators.id,
     validators.result,
     monitoringController.getMonitoringByID
@@ -67,7 +67,7 @@ router.get(
 
 // Updating Monitorings
 router.patch(
-    '/update-monitoring/:id',
+    '/monitorings/:id',
     [...validators.id, ...validators.monitoringsInfo],
     validators.result,
     monitoringController.updateMonitoring
@@ -75,7 +75,7 @@ router.patch(
 
 // Deleting Monitorings
 router.delete(
-    '/delete-monitoring/:id',
+    '/monitorings/:id',
     validators.id,
     validators.result,
     monitoringController.deleteMonitoring
